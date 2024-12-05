@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State Timeline</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div id="stateTimeline" style="width: 100%; height: 600px;"></div>
+  <script>
+    // Data for the State Timeline
+    const timelineData = {
+      data_moving: [
+        { x: [-0.1, 3.1], y: ["moving", "moving"], mode: "lines", name: "Moving" },
+        { x: [11.9, 19.1], y: ["moving", "moving"], mode: "lines", name: "Moving"},
+        { x: [22.9, 23.1], y: ["moving", "moving"], mode: "lines", name: "Moving" },
+        { x: [30.9, 31.1], y: ["moving", "moving"], mode: "lines", name: "Moving" },
+        { x: [32.9, 34.1], y: ["moving", "moving"], mode: "lines", name: "Moving" },
+        { x: [40.9, 41.1], y: ["moving", "moving"], mode: "lines", name: "Moving"},
+        { x: [42.9, 45.1], y: ["moving", "moving"], mode: "lines", name: "Moving"},
+        { x: [50.9, 52.1], y: ["moving", "moving"], mode: "lines", name: "Moving"},
+        { x: [58.9, 60.1], y: ["moving", "moving"], mode: "lines", name: "Moving"},
+        { x: [85.9, 86.1], y: ["moving", "moving"], mode: "lines", name: "Moving"},
+      ],
+      data_sitting: [
+        { x: [3.9, 11.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting"},
+        { x: [19.9, 22.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting"},
+        { x: [23.9, 30.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting"},
+        { x: [31.9, 32.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting"},
+        { x: [34.9, 40.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting" },
+        { x: [41.9, 42.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting"},
+        { x: [45.9, 50.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting" },
+        { x: [52.9, 58.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting"},
+        { x: [60.9, 85.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting"},
+        { x: [86.9, 92.1], y: ["sitting", "sitting"], mode: "lines", name: "Sitting"},
+      ],
+      title: "State Timeline",
+    };
+
+    // Combine all traces
+    const traces = [...timelineData.data_moving, ...timelineData.data_sitting];
+
+    traces.forEach(trace => {
+        trace.y[0] == "sitting" ? trace.line = { width: 400, color: 'green' } :  trace.line = { width: 400, color: 'orange' };
+    });
+    // Layout for the Plotly graph
+    const layout = {
+      title: timelineData.title,
+      xaxis: { title: "Time", range: [0, 100] },
+      yaxis: { title: "States", type: "category" },
+      margin: { l: 100, r: 50, t: 50, b: 50 },
+      showlegend: false
+    };
+
+    // Render the plot
+    Plotly.newPlot("stateTimeline", traces, layout);
+  </script>
+</body>
+</html>

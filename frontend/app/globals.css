@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* @media (max-width: 1200px) {
+    .container {
+      font-size: 1.2rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .container {
+      font-size: 1rem;
+    }
+  } */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+   body {
+    background-color: #EAE4DD;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.filter-bar {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    color: #E1D7C6;
+    height: 96%;
+}
+
+.filter-bar select,
+.filter-bar input {
+    background-color: #CDC2A5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+.filter-bar select:focus,
+.filter-bar input:focus {
+    background-color: #CDC2A5;
+    color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.plot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.plot-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.plot-card:hover {
+    transform: scale(1.02);
+}
+
+.plot-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #4a90e2;
+}
+
+.close-btn,
+.enlarge-btn {
+    position: absolute;
+    top: 10px;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+.close-btn {
+    right: 10px;
+    background-color: #c0392b;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #91271b;
+}
+
+.enlarge-btn {
+    right: 50px;
+    background-color: #02448b66;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.enlarge-btn:hover {
+    background-color: #032c5766;
+}
+
+.modal-content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.upload-wrapper {
+    position: relative;
+}
+
+.col-md-12 {
+    padding: 3%;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.addmargin {
+    margin-top: 2%;
+    max-width: 70% !important;
+}
+
+.addmargin20 {
+    margin-top: 40%;
+}
+.addmargin-plotgrid{
+    margin-left: 15%;
+    margin-right: -7%;
+}
+
+h3 {
+    color: #295F98;
+    font-weight: 300;
+}
+
+.upload-wrapper {
+    position: relative;
+    margin-top: 15px;
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+.form-control-file {
+    display: none;
+}
+
+
+.upload-label:hover {
+    background-color: #193b5f9c;
+    transform: scale(1.05);
+}
+
+.form-control-file {
+    display: none;
+}
+
+.upload-label:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.5);
+}
+input::placeholder{
+    color:#fff !important;
+}
+
+.ReactModal__Content--after-open {
+    position: fixed!important;
+    inset: 40px!important;
+    background: rgb(255, 255, 255)!important;
+    overflow: auto!important;
+    border-radius: 4px!important;
+    outline: none!important;
+    padding: 20px!important;
+    top:13%!important;
+    left:33%!important;
+    border: 1px solid rgb(204, 204, 204)!important;
+    width: 45%;
+  }
+
+  .wide-card {
+    grid-column: span 3;
+  }
+
+  .modebar-container {
+    right: -65px !important;
+  }

@@ -1,0 +1,14 @@
+backend/venv/
+backend/images/*.png
+backend/*.mp4
+backend/*/__pycache__
+backend/__pycache__
+backend/README.md
+
+frontend/README.md
+
+frontend/.gitignore
+
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*

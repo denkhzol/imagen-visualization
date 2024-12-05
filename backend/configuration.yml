@@ -1,0 +1,16 @@
+animal: pig
+data_file: pig_boundingbox.txt
+data_folder: data
+desired_animal_indices: all
+desired_plots:
+- static_trajectories
+- proximity_heatmap
+- states
+- distance_bar
+- proximity_bar
+- proximity_graph
+- velocity_plot
+- state_timeline
+image_folder: images
+radius: 100
+subject: 9
